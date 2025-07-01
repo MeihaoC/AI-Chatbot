@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title="AI Chatbot" icon-name="standard:bot">
+        <div class="chat-container">
+            <!-- Settings Panel -->
+            <div class="settings-panel">
+                <div class="setting-group">
+                    <label for="model-select">Model:</label>
+                    <lightning-combobox
+                        id="model-select"
+                        name="model"
+                        value={selectedModel}
+                        placeholder="Select a model"
+                        options={modelOptions}
+                        onchange={handleModelChange}
+                        variant="label-hidden">
+                    </lightning-combobox>
+                </div>
+                
+                <div class="setting-group">
+                    <label for="temperature-slider">Temperature: {temperature}</label>
+                    <lightning-slider
+                        id="temperature-slider"
+                        name="temperature"
+                        value={temperature}
+                        min="0"
+                        max="1"
+                        step="0.1"
+                        onchange={handleTemperatureChange}
+                        variant="label-hidden">
+                    </lightning-slider>
+                </div>
+
+                <div class="setting-group">
+                    <lightning-button
+                        label="Clear Chat"
+                        variant="neutral"
+                        onclick={handleClearChat}
+                        class="clear-button">
+                    </lightning-button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages">
+                <template for:each={messages} for:item="message" for:index="index">
+                    <div key={message.id} class={message.messageClass}>
+                        <div class="message-header">
+                            <lightning-icon 
+                                icon-name={message.iconName} 
+                                size="small" 
+                                class="message-icon">
+                            </lightning-icon>
+                            <span class="message-role">{message.role}</span>
+                            <span class="message-time">{message.timestamp}</span>
+                        </div>
+                        <div class="message-content">
+                            <template if:true={message.isLoading}>
+                                <div class="loading-dots">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </template>
+                            <template if:false={message.isLoading}>
+                                <lightning-formatted-rich-text 
+                                    value={message.content}>
+                                </lightning-formatted-rich-text>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-container">
+                    <lightning-textarea
+                        name="userInput"
+                        value={userInput}
+                        placeholder="Type your message here... (Shift+Enter for new line, Enter to send)"
+                        onchange={handleInputChange}
+                        onkeydown={handleKeyDown}
+                        variant="label-hidden"
+                        class="message-input">
+                    </lightning-textarea>
+                    <lightning-button
+                        label="Send"
+                        variant="brand"
+                        onclick={handleSend}
+                        disabled={isSendDisabled}
+                        class="send-button">
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template> 

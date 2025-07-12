@@ -1,18 +1,35 @@
-# Salesforce DX Project: Next Steps
+# AI Chatbot for Salesforce
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A custom Salesforce-integrated AI chatbot that allows users to interact with powerful language models from OpenAI and Anthropic directly within the Salesforce platform.
 
-## How Do You Plan to Deploy Your Changes?
+## 🚀 Features
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+- **Seamless Salesforce Deployment**: Built using Lightning Web Components (LWC) and Apex for native Salesforce integration.
+- **Multi-Model Support**: Users can choose from a variety of cutting-edge AI models:
+  - **OpenAI**:
+    - `gpt-4.1`
+    - `gpt-4o`
+  - **Anthropic**:
+    - `claude-3-opus-20240229` (CLAUDE_OPUS_4)
+    - `claude-3-sonnet-20240229` (CLAUDE_SONNET_4)
+    - `claude-3-sonnet-20230718` (CLAUDE_SONNET_37)
+    - Web search-enhanced Claude models (if enabled)
 
-## Configure Your Salesforce DX Project
+- **Dynamic Model Switching**: End users can choose the AI model in real time through a user-friendly interface.
+- **Prompt Customization**: Modify prompts and temperature settings directly from the Salesforce UI.
+- **External Credentials**: Uses Salesforce Named Credentials and External Credentials for secure API authentication.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## 🧩 Tech Stack
 
-## Read All About It
+- **Frontend**: Lightning Web Components (LWC), JavaScript, HTML, CSS
+- **Backend**: Apex (Salesforce)
+- **APIs**: OpenAI, Anthropic (Claude)
+- **Authentication**: OAuth and API key via Salesforce Named & External Credentials
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+## 📦 Setup Instructions
+
+1. **Clone this repository**:
+   ```bash
+   git clone https://github.com/MeihaoC/AI-Chatbot.git
+   cd AI-Chatbot
+

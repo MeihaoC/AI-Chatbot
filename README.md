@@ -24,7 +24,7 @@ A custom Salesforce-integrated AI chatbot that allows users to interact with pow
 - **Frontend**: Lightning Web Components (LWC), JavaScript, HTML, CSS
 - **Backend**: Apex (Salesforce)
 - **APIs**: OpenAI, Anthropic (Claude)
-- **Authentication**: OAuth and API key via Salesforce Named & External Credentials
+- **Authentication**: OAuth and API key via Salesforce Custom Settings
 
 ## 📦 Setup Instructions
 

@@ -17,7 +17,7 @@ A custom Salesforce-integrated AI chatbot that allows users to interact with pow
 
 - **Dynamic Model Switching**: End users can choose the AI model in real time through a user-friendly interface.
 - **Prompt Customization**: Modify prompts and temperature settings directly from the Salesforce UI.
-- **External Credentials**: Uses Salesforce Named Credentials and External Credentials for secure API authentication.
+- **External Credentials**: Uses Salesforce Custom Settings for secure API authentication.
 
 ## 🧩 Tech Stack
 

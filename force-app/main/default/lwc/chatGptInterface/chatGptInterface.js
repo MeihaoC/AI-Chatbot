@@ -2,8 +2,8 @@ import { LightningElement, track, wire } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getAIResponse from '@salesforce/apex/ChatGPTService.getAIResponse';
 import getAvailableModels from '@salesforce/apex/ChatGPTService.getAvailableModels';
-import getAnthropicResponse from '@salesforce/apex/Anthropic.getReply';
-import getAnthropicApiKey from '@salesforce/apex/Anthropic.getAnthropicApiKey';
+import getAnthropicResponse from '@salesforce/apex/AnthropicController.getReply';
+import getAnthropicApiKey from '@salesforce/apex/AnthropicController.getAnthropicApiKey';
 
 export default class ChatGptInterface extends LightningElement {
     @track messages = [];
